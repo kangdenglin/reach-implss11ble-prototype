@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class CardModel : MonoBehaviour
 {
     public GameObject ParentPanel; //for new gameobject created during the game
@@ -195,7 +196,8 @@ public class CardModel : MonoBehaviour
                 Debug.Log("Incorrect! Game Over.");
 
                 Score.totalScore = score;
-                SceneManager.LoadScene("LoseScene");
+                //SceneManager.LoadScene("LoseScene");
+                SwitchScene.changeScene("LoseScene");
                 //StartCoroutine(ShowGameOver(indexInStack));
 
                 return;
@@ -213,7 +215,8 @@ public class CardModel : MonoBehaviour
 
         if (score >= 11)
         {
-            SceneManager.LoadScene("WinScene");
+            //SceneManager.LoadScene("WinScene");
+            SwitchScene.changeScene("WinScene");
             //ToggleWinPanel(true); // player win
             return;
         }
